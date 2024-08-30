@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todo.css">
+    <title>To-Do List</title>
+</head>
+<body>
+    <div class="head">
+        <p>To-Do List</p>
+    </div>
+
+    <section>
+        <div class="task">
+            <input type="text" id="taskDescription" placeholder="Enter your Description">
+        </div>
+
+        <div class="DOB">
+            <input type="date" id="taskDate" placeholder="Task time">
+        </div>
+
+        <div class="state">
+            <select id="taskState">
+                <option value="Incomplete">Incomplete</option>
+                <option value="Complete">Complete</option>
+                <option value="Active">Active</option>
+            </select>
+        </div>
+
+        <button onclick="addTask()">Add Task</button>
+
+        <div class="display" id="taskList">
+            <!-- Tasks will be displayed here -->
+        </div>
+
+        <div class="actions">
+            <button onclick="filterTasks('all')">All</button>
+            <button onclick="filterTasks('active')">Active</button>
+            <button onclick="filterTasks('completed')">Completed</button>
+            <button onclick="clearAllTasks()">Clear all tasks</button>
+        </div>
+
+        <div class="congratulations" id="congratsMessage">
+            Congratulations! You've completed all tasks!
+        </div>
+    </section>
+
+    <script src="todo.js"></script>
+</body>
+</html>

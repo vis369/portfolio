@@ -1,0 +1,80 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: black;
+    height: 100vh;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.task, .DOB, .state, .actions {
+    margin: 10px 0;
+}
+
+.task input, .DOB input, .state select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 250px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.display {
+    width: 300px;
+    margin-top: 20px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.task-item button {
+    background-color: #dc3545;
+    padding: 5px 10px;
+}
+
+.congratulations {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+}

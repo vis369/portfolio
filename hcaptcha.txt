@@ -1,0 +1,6 @@
+Sitekeys are used to uniquely identify your site(s). We've already generated your first one: 27c8f200-1192-4bbe-a63a-94487fcade7a
+You can specify captcha related settings per sitekey, such as challenge difficulty and preferred content based on site topics..
+
+2
+A secret is used to verify your hCaptcha account: ES_968a6375e44c4aba925010021b69f02a
+This secret is used by your server to verify the hCaptcha passcode returned when a user successfully completes a captcha. One secret is used for all sitekeys..

@@ -1,0 +1,48 @@
+:root {
+  --paper-color: hsl(0, 15%, 90%); /* Slightly darker paper color for an aged look */
+  --ink-color: hsl(0, 0%, 12%);
+  --line-thickness: 3px;
+  --top-space: 4lh;
+  --shadow-color: rgba(0, 0, 0, 0.2); /* Slightly darker shadow for depth */
+}
+
+.paper {
+  background: var(--paper-color);
+  margin: 2rem;
+  padding: calc(var(--top-space) - 0.5lh) 1.5rem 1rem 3rem;
+  font-family: system-ui;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--ink-color);
+  background-image: 
+    /* Subtle paper texture */
+    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiMwMDQwNDAiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVkaWxpbmU9InZhbCIgc3Ryb2tlLW9wYWNpdHk9IjAiIHN0cm9rZS1kYXNoYXJrPSIxMCI+CiAgICA8cGF0aCBkPSJNNSA0TDExIDIwMEE5IDExLDEwLDUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVkPSJyIj48L3BhdGg+CiAgICA8cGF0aCBkPSJNMTAgMzAgMTAgMTAgMCIgc3Ryb2tlLWxpbmVkaWxpbmU9InZhbCIgc3Ryb2tlLWxpbmVkPSJyb3VuZCI+CiAgICAgIDxwYXRoIGQ9Ik0yMCAyMCAyMCAyMCIgc3Ryb2tlLWxpbmVkPSJydCIsIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVkPSJyb3VuZCI+CiAgICAtcGF0aCBkPSJNMTAgNCAxMCAxMCIgc3Ryb2tlLWxpbmVkaWxpbmU9InZhbCIgc3Ryb2tlLWxpbmVkPSJyb3VuZCIgc3Ryb2tlLWxpbmVkaWxpbmU9InJvbmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVkPSJyb3VuZCI+CiAgICA8L3BhdGg+CiAgPC9nPjwvc3ZnPg=='); /* Example of a base64 encoded paper texture */
+  background-size: cover; /* Ensure texture covers the entire element */
+  background-blend-mode: multiply; /* Blend texture with background color */
+  box-shadow: 0 4px 8px var(--shadow-color), 0 0 1rem var(--shadow-color); /* Enhanced shadow for depth */
+  border-radius: 8px; /* Optional: adds rounded corners */
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .paper {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  a {
+    font-size: 0.9rem;
+  }
+}
