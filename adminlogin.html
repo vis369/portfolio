@@ -1,6 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" type="text/css" href="adminlogin.css">
 </head>
@@ -59,7 +61,10 @@
                       <a href="#">Forgot your password?</a>
                     </div>
                   </div>
-                  <input type="password" id="password" name="password">
+                  <input type="password" id="password" name="password" oninput="checkPasswordStrength()">
+                  <div class="password-strength" id="password-strength">
+                    <div class="strength-bar" id="strength-bar"></div>
+                  </div>
                 </div>
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                   <label for="checkbox">
@@ -88,23 +93,41 @@
   </div>
   <script>
     function loginFunction() {
-      // Predefined credentials
       const validEmail = "vishnuvardhanchilakala544@gmail.com";
       const validPassword = "pass123";
-
-      // Get input values
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
-      // Validate credentials
       if (email === validEmail && password === validPassword) {
-        // Redirect to another page
-        window.location.href = "Dashboard.html"; // Replace with the actual file you want to include
-        return false; // Prevent form submission
+        window.location.href = "Dashboard.html";
+        return false;
       } else {
         alert("Invalid email or password. Please try again.");
-        return false; // Prevent form submission
+        return false;
       }
+    }
+
+    function checkPasswordStrength() {
+      const strengthBar = document.getElementById("strength-bar");
+      const password = document.getElementById("password").value;
+      const strength = calculatePasswordStrength(password);
+
+      if (strength <= 1) {
+        strengthBar.className = "strength-bar strength-weak";
+      } else if (strength === 2) {
+        strengthBar.className = "strength-bar strength-medium";
+      } else {
+        strengthBar.className = "strength-bar strength-strong";
+      }
+    }
+
+    function calculatePasswordStrength(password) {
+      let strength = 0;
+      if (password.length >= 8) strength++;
+      if (/[A-Z]/.test(password)) strength++;
+      if (/[0-9]/.test(password)) strength++;
+      if (/[^A-Za-z0-9]/.test(password)) strength++;
+      return strength;
     }
   </script>
 </body>
